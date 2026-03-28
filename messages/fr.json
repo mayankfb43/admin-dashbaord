@@ -1,0 +1,6 @@
+{
+  "HomePage": {
+    "title": "Bienvenue sur le tableau de bord d'administration",
+    "description": "Il s'agit d'un tableau de bord d'administration localisé construit avec Next.js et next-intl."
+  }
+}

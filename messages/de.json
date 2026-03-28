@@ -1,0 +1,6 @@
+{
+  "HomePage": {
+    "title": "Willkommen im Admin-Dashboard",
+    "description": "Dies ist ein lokalisiertes Admin-Dashboard, das mit Next.js und next-intl erstellt wurde."
+  }
+}
