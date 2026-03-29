@@ -1,0 +1,14 @@
+Prompt: "Replicate this Figma frame transactions [1440, 1208, 375].svg exactly. The frame size is [Width]x[Height]px.
+
+Requirements:
+Use MUI CSS for styling.
+Create a fully fluid, responsive layout that adapts from mobile (375px) to desktop (1440px) without harsh breakpoints where possible.
+Use Flexbox/Grid for the layout, mimicking the Figma Auto Layout structure.
+Use rem for typography and spacing, and % or vw for widths. Use max-w to prevent over-stretching.
+Match exact colors, border-radius, and typography styles from the design.
+Goal: Create a high-fidelity, responsive web component."
+
+
+
+
+Replicate this Figma frame transactions [1440, 1208, 375].svg exactly. The container size in 1440px breakpoint is [350 * 235] for 1208 breakpoint is [231 & 170] and 375 breakpoint is [325 * 214].  Requirements: Use MUI CSS for styling. Create a fully fluid, responsive layout that adapts from mobile (375px) to desktop (1440px) without harsh breakpoints where possible. Use Flexbox/Grid for the layout, mimicking the Figma Auto Layout structure. Use rem for typography and spacing, and % or vw for widths. Use max-w to prevent over-stretching. Match exact colors, border-radius, and typography styles from the design. Goal: Create a high-fidelity, responsive web component.

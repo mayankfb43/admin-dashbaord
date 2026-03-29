@@ -38,49 +38,99 @@ const transactions = [
 
 export const RecentTransactions = () => {
   return (
-    <Card 
+    <Card
       title="Recent Transaction"
-      sx={{ 
-        height: (theme: Theme) => theme.layout.cardHeight,
+      sx={{
+        width: '100%',
+        maxWidth: '21.875rem', // 350px
+        height: 'auto',
+        aspectRatio: {
+          xs: '325/214',
+          md: '231/170',
+          lg: '350/235'
+        },
+        borderRadius: {
+          xs: '0.9375rem', // 15px
+          md: '1.25rem', // 20px
+          lg: '1.5625rem' // 25px
+        },
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
+        // Internal padding in rem
+        p: {
+          xs: '1.25rem', // 20px
+          md: '1.5rem',  // 24px
+
+        }
       }}
     >
-      <Stack spacing={2.5}>
+      <Stack
+        spacing={{ xs: '0.625rem', md: '0.6875rem', lg: '0.75rem' }} // ~10px, 11px, 12px
+        sx={{
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'stretch'
+        }}
+      >
         {transactions.map((item) => (
-          <Box key={item.id} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-              <Box sx={{ 
-                width: 50, 
-                height: 50, 
-                borderRadius: '50%', 
+          <Stack
+            key={item.id}
+            direction="row"
+            alignItems="center"
+            justifyContent="space-between"
+            spacing="1rem"
+            sx={{ width: '100%' }}
+          >
+            <Stack direction="row" alignItems="center" spacing="1rem">
+              <Box sx={{
+                width: 'clamp(2.1875rem, 3.5vw, 3.125rem)', // Reduced to 35px - 50px
+                height: 'clamp(2.1875rem, 3.5vw, 3.125rem)',
+                borderRadius: '50%',
                 bgcolor: item.iconBg,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                flexShrink: 0,
+                '& svg': {
+                  fontSize: 'clamp(1.125rem, 1.75vw, 1.5rem)' // Reduced to 18px - 24px
+                }
               }}>
                 {item.icon}
               </Box>
-              <Box>
-                <Typography variant="body1" sx={{ fontWeight: 600, color: 'text.primary' }}>
+              <Stack spacing="0.125rem">
+                <Typography
+                  sx={{
+                    fontWeight: 600,
+                    color: '#232323',
+                    fontSize: 'clamp(0.8125rem, 1vw, 1rem)', // 13px - 16px
+                    lineHeight: 1.1
+                  }}
+                >
                   {item.title}
                 </Typography>
-                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                <Typography
+                  sx={{
+                    color: '#718EBF',
+                    fontSize: 'clamp(0.6875rem, 0.8vw, 0.875rem)', // 11px - 14px
+                    lineHeight: 1
+                  }}
+                >
                   {item.date}
                 </Typography>
-              </Box>
-            </Box>
-            <Typography 
-              variant="body1" 
-              sx={{ 
-                fontWeight: 600, 
-                color: item.type === 'positive' ? 'success.main' : 'error.main' 
+              </Stack>
+            </Stack>
+            <Typography
+              sx={{
+                fontWeight: 600,
+                color: item.type === 'positive' ? '#41D4A8' : '#FF4B4A',
+                fontSize: 'clamp(0.8125rem, 1vw, 1rem)', // 13px - 16px
+                whiteSpace: 'nowrap',
+                textAlign: 'right'
               }}
             >
               {item.amount}
             </Typography>
-          </Box>
+          </Stack>
         ))}
       </Stack>
     </Card>

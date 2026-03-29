@@ -93,11 +93,11 @@ export const PieChart = () => {
   }, [width, height, theme]);
 
   return (
-    <Card 
+    <Card
       title="Expense Statistics"
-      sx={{ 
-        p: (theme: Theme) => theme.customSpacing.cardPadding, 
-        height: (theme: Theme) => theme.layout.chartHeight, 
+      sx={{
+        p: (theme: Theme) => theme.customSpacing.cardPadding,
+        height: (theme: Theme) => theme.layout.chartHeight,
         overflow: 'hidden',
       }}
     >

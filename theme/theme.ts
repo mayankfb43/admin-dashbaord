@@ -6,7 +6,7 @@ import { createTheme } from '@mui/material/styles';
 declare module '@mui/material/styles' {
   interface Theme {
     layout: {
-      drawerWidth: number;
+      drawerWidth: number | Record<string, number>;
       headerHeight: number;
       cardHeight: number;
       chartHeight: number;
@@ -19,7 +19,7 @@ declare module '@mui/material/styles' {
   }
   interface ThemeOptions {
     layout?: {
-      drawerWidth?: number;
+      drawerWidth?: number | Record<string, number>;
       headerHeight?: number;
       cardHeight?: number;
       chartHeight?: number;
@@ -40,7 +40,7 @@ const theme = createTheme({
   // 📐 LAYOUT & SPACING TOKENS
   // -----------------------------
   layout: {
-    drawerWidth: 250,
+    drawerWidth: { md: 230, lg: 250 },
     headerHeight: 101,
     cardHeight: 235,
     chartHeight: 322,
@@ -115,24 +115,32 @@ const theme = createTheme({
       fontSize: '2rem', // 32px
       fontWeight: 700,
     },
-    h2: { 
+    h2: {
       fontSize: '1.5rem', // 24px
-      fontWeight: 600 
+      fontWeight: 600
     },
-    h3: { 
+    h3: {
       fontSize: '1.25rem', // 20px
-      fontWeight: 600 
+      fontWeight: 600
     },
     h4: {
       fontSize: '1.125rem', // 18px
       fontWeight: 600
     },
-    body1: { 
+    h5: {
+      fontSize: '1rem',
+      fontWeight: 600,
+    },
+    h6: {
+      fontSize: '1.125rem',
+      fontWeight: 600,
+    },
+    body1: {
       fontSize: '1rem', // 16px
     },
-    body2: { 
+    body2: {
       fontSize: '0.875rem', // 14px
-      color: '#6B7280' 
+      color: '#6B7280'
     },
     caption: {
       fontSize: '0.75rem', // 12px
@@ -151,7 +159,7 @@ const theme = createTheme({
   // 🔲 SHAPE
   // -----------------------------
   shape: {
-    borderRadius: 25,
+    borderRadius: 0,
   },
 
   // -----------------------------
@@ -172,8 +180,7 @@ const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          borderRadius: 25,
-          border: '1px solid #E5E7EB',
+
           boxShadow: '0px 4px 12px rgba(0,0,0,0.05)',
         },
       },

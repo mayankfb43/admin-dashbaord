@@ -9,7 +9,6 @@ export default function HomePage() {
     <Container maxWidth={'xl'} sx={{ overflowX: 'hidden' }}>
       <DashboardLayout>
         <Box sx={{ px: 4 }}>
-          <AuthOrganisms />
         </Box>
       </DashboardLayout>
     </Container>

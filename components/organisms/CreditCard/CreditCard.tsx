@@ -1,6 +1,5 @@
-'use client';
-
-import { Box, Typography, Theme } from '@mui/material';
+import { Box, Stack, Typography, Theme } from '@mui/material';
+import Image from 'next/image';
 
 interface CreditCardProps {
   variant?: 'active' | 'inactive';
@@ -11,137 +10,174 @@ interface CreditCardProps {
 }
 
 export const CreditCard = ({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   variant = 'active',
   balance = '$5,756',
   holder = 'Eddy Cusuma',
   expiry = '12/22',
   cardNumber = '3778 **** **** 1234',
 }: CreditCardProps) => {
-  const isActive = variant === 'active';
 
   return (
-    <Box
-      sx={{
-        minWidth: '100%',
-        maxWidth: 350,
-        height: (theme: Theme) => theme.layout.cardHeight,
-        borderRadius: 1, // Inherits from theme.shape.borderRadius (25px)
-        background: isActive
-          ? (theme) =>
-            `linear-gradient(135deg, ${theme.palette.primary.light}, ${theme.palette.primary.dark})`
-          : 'white',
-        border: !isActive ? 1 : 'none',
-        borderColor: 'divider',
-        color: isActive ? 'primary.contrastText' : 'text.primary',
-        display: 'flex',
-        flexDirection: 'column',
-        overflow: 'hidden',
-        position: 'relative',
-        boxShadow: isActive ? '0px 10px 20px rgba(58, 54, 219, 0.2)' : 'none',
-      }}
-    >
-      {/* Top Section */}
-      <Box sx={{ p: (theme: Theme) => theme.customSpacing.cardPadding, flexGrow: 1 }}>
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 2 }}>
-          <Box>
-            <Typography
-              variant="caption"
-              sx={{
-                opacity: 0.7,
-                color: isActive ? 'inherit' : 'text.secondary',
-              }}
-            >
-              Balance
-            </Typography>
-            <Typography variant="h2" sx={{ fontWeight: 600 }}>
-              {balance}
-            </Typography>
-          </Box>
-          {/* Chip Icon placeholder */}
-          <Box
-            sx={{
-              width: 35,
-              height: 35,
-              borderRadius: 1,
-              bgcolor: isActive ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.1)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <Box sx={{ width: 20, height: 15, border: 1, borderColor: 'inherit', borderRadius: 0.5, opacity: 0.5 }} />
-          </Box>
-        </Box>
-
-        <Box sx={{ display: 'flex', gap: 8, mt: 3 }}>
-          <Box>
-            <Typography
-              variant="overline"
-              sx={{
-                opacity: 0.7,
-                color: isActive ? 'inherit' : 'text.secondary',
-              }}
-            >
-              Card Holder
-            </Typography>
-            <Typography variant="body1" sx={{ fontWeight: 600 }}>
-              {holder}
-            </Typography>
-          </Box>
-          <Box>
-            <Typography
-              variant="overline"
-              sx={{
-                opacity: 0.7,
-                color: isActive ? 'inherit' : 'text.secondary',
-              }}
-            >
-              Valid Thru
-            </Typography>
-            <Typography variant="body1" sx={{ fontWeight: 600 }}>
-              {expiry}
-            </Typography>
-          </Box>
-        </Box>
-      </Box>
-
-      {/* Bottom Section Card Number */}
-      <Box
+    <Box sx={(theme: Theme) => ({
+      width: '100%',
+      maxWidth: 350,
+      aspectRatio: {
+        xs: '325/214',
+        md: '231/170',
+        lg: '350/235'
+      },
+      background: variant === 'active'
+        ? 'linear-gradient(135deg, #4C49ED 0%, #0A06F4 100%)'
+        : theme.palette.background.paper,
+      border: variant === 'inactive' ? `1px solid ${theme.palette.divider}` : 'none',
+      borderRadius: { xs: '15px', md: '20px', lg: '25px' },
+      position: 'relative',
+      overflow: 'hidden',
+      color: variant === 'active' ? 'common.white' : 'text.primary',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+    })}>
+      {/* Top Section: Balance & Chip */}
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        alignItems="flex-start"
         sx={{
-          p: (theme: Theme) => theme.customSpacing.cardPadding,
-          height: '70px',
-          background: isActive ? 'linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0))' : 'transparent',
-          borderTop: !isActive ? 1 : 'none',
-          borderColor: 'divider',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
+          p: (theme) => theme.spacing(3),
+          pb: 0
         }}
       >
-        <Typography variant="h2" sx={{ letterSpacing: '2px', fontWeight: 600 }}>
-          {cardNumber}
-        </Typography>
-
-        {/* Card Brand Placeholder */}
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Box
+        <Stack spacing={0.5}>
+          <Typography
+            variant="overline"
             sx={{
-              width: 28,
-              height: 28,
-              bgcolor: isActive ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.1)',
-              borderRadius: '50%',
-              mr: -1.5,
+              opacity: 0.7,
+              lineHeight: 1,
+              fontSize: 'clamp(10px, 0.8vw, 12px)'
             }}
-          />
-          <Box
+          >
+            Balance
+          </Typography>
+          <Typography
+            variant="h6"
             sx={{
-              width: 28,
-              height: 28,
-              bgcolor: isActive ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.05)',
-              borderRadius: '50%',
+              fontWeight: 600,
+              fontSize: 'clamp(16px, 1.2vw, 20px)'
+            }}
+          >
+            {balance}
+          </Typography>
+        </Stack>
+        <Box sx={{ width: 'clamp(28px, 2.5vw, 35px)', height: 'auto' }}>
+          <Image
+            src={variant === 'active' ? "/Chip_Card.svg" : "/Chip_Card_2.png"}
+            alt="card chip"
+            width={35}
+            height={35}
+            style={{
+              width: '100%',
+              height: 'auto',
+              filter: variant === 'inactive' ? 'grayscale(1) brightness(0)' : 'none'
             }}
           />
         </Box>
+      </Stack>
+
+      {/* Middle Section: Holder & Expiry */}
+      <Stack
+        direction="row"
+        spacing={8}
+        sx={{
+          px: (theme) => theme.spacing(3),
+          mb: 'auto',
+          pt: (theme) => theme.spacing(2)
+        }}
+      >
+        <Stack spacing={0.5}>
+          <Typography
+            variant="overline"
+            sx={{
+              opacity: 0.7,
+              lineHeight: 1,
+              fontSize: 'clamp(8px, 0.7vw, 10px)'
+            }}
+          >
+            CARD HOLDER
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontWeight: 600,
+              fontSize: 'clamp(12px, 1.1vw, 15px)',
+              whiteSpace: 'nowrap'
+            }}
+          >
+            {holder}
+          </Typography>
+        </Stack>
+        <Stack spacing={0.5}>
+          <Typography
+            variant="overline"
+            sx={{
+              opacity: 0.7,
+              lineHeight: 1,
+              fontSize: 'clamp(8px, 0.7vw, 10px)'
+            }}
+          >
+            VALID THRU
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontWeight: 600,
+              fontSize: 'clamp(12px, 1.1vw, 15px)'
+            }}
+          >
+            {expiry}
+          </Typography>
+        </Stack>
+      </Stack>
+
+      {/* Bottom Section: Card Number & Footer */}
+      <Box
+        sx={(theme) => ({
+          background: variant === 'active'
+            ? 'linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%)'
+            : 'none',
+          borderTop: variant === 'inactive' ? `1px solid ${theme.palette.divider}` : 'none',
+          px: theme.spacing(3),
+          py: 'clamp(12px, 1.5vw, 20px)',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center'
+        })}
+      >
+        <Typography
+          sx={{
+            fontWeight: 600,
+            fontSize: 'clamp(16px, 1.5vw, 22px)',
+            letterSpacing: '1px',
+            whiteSpace: 'nowrap'
+          }}
+        >
+          {cardNumber}
+        </Typography>
+        <Stack direction="row" spacing={-1.5}>
+          <Box sx={{
+            width: 'clamp(24px, 2.5vw, 30px)',
+            height: 'clamp(24px, 2.5vw, 30px)',
+            bgcolor: variant === 'active' ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.2)',
+            borderRadius: '50%'
+          }} />
+          <Box sx={{
+            width: 'clamp(24px, 2.5vw, 30px)',
+            height: 'clamp(24px, 2.5vw, 30px)',
+            bgcolor: variant === 'active' ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.2)',
+            borderRadius: '50%'
+          }} />
+        </Stack>
       </Box>
     </Box>
   );

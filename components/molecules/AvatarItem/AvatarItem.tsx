@@ -18,7 +18,7 @@ export const AvatarItem = ({ image, name, role, active }: AvatarItemProps) => {
       gap: 1,
       cursor: 'pointer',
       textAlign: 'center',
-      minWidth: { xs: 80, md: 70, lg: 80 }
+      minWidth: { xs: 71, md: 70, lg: 80 }
     }}>
       <Avatar
         src={image}
