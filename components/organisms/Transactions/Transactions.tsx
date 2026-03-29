@@ -60,15 +60,14 @@ export const RecentTransactions = () => {
         p: {
           xs: '1.25rem', // 20px
           md: '1.5rem',  // 24px
-
+          lg: '1.5rem' // 30px
         }
       }}
     >
       <Stack
-        spacing={{ xs: '0.625rem', md: '0.6875rem', lg: '0.75rem' }} // ~10px, 11px, 12px
         sx={{
           flex: 1,
-          justifyContent: 'center',
+          justifyContent: 'space-between',
           alignItems: 'stretch'
         }}
       >

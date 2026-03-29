@@ -22,7 +22,7 @@ export const MainContent = ({ children }: { children?: React.ReactNode }) => {
             <Grid container spacing={4}>
               {/* Split 6/12 at MD+, stacks at XS */}
               <Grid size={{ xs: 12, md: 6 }}>
-                <CreditCard variant="inactive" />
+                <CreditCard variant="active" />
               </Grid>
               <Grid size={{ xs: 12, md: 6 }}>
                 <CreditCard variant="inactive" />
