@@ -1,108 +1,114 @@
 'use client';
 
-import { Box, Typography, Stack, Theme } from '@mui/material';
-import PaymentsIcon from '@mui/icons-material/Payments';
-import PayPalIcon from '@mui/icons-material/AccountBalanceWallet'; // Simplified placeholder
-import PersonIcon from '@mui/icons-material/Person';
+import React from 'react';
+import { Box, Typography, Stack } from '@mui/material';
 import { Card } from '../../molecules';
+import PaymentIcon from '@mui/icons-material/Payment';
+import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
 
 const transactions = [
   {
     id: 1,
+    icon: <PaymentIcon sx={{ color: '#FFBB38' }} />,
+    iconBg: '#FFF5D9',
     title: 'Deposit from my Card',
     date: '28 January 2021',
     amount: '-$850',
-    type: 'negative',
-    icon: <PaymentsIcon sx={{ color: '#FFBB38' }} />,
-    iconBg: '#FFF5D9',
+    type: 'negative'
   },
   {
     id: 2,
+    icon: <AccountBalanceWalletIcon sx={{ color: '#396AFF' }} />,
+    iconBg: '#E7EDFF',
     title: 'Deposit Paypal',
     date: '25 January 2021',
     amount: '+$2,500',
-    type: 'positive',
-    icon: <PayPalIcon sx={{ color: '#396AFF' }} />,
-    iconBg: '#E7EDFF',
+    type: 'positive'
   },
   {
     id: 3,
+    icon: <CurrencyExchangeIcon sx={{ color: '#16DBCC' }} />,
+    iconBg: '#DCFAF8',
     title: 'Jemi Wilson',
     date: '21 January 2021',
     amount: '+$5,400',
-    type: 'positive',
-    icon: <PersonIcon sx={{ color: '#16DBCC' }} />,
-    iconBg: '#DCFAF8',
-  },
+    type: 'positive'
+  }
 ];
 
 export const RecentTransactions = () => {
+  // --- PIECEWISE FLUID DIMENSIONS ---
+  const width = {
+    xs: 325,
+    sm: 'clamp(231px, calc(379.3px - 14.48vw), 325px)', // 375 -> 1024 (down)
+    md: 'clamp(231px, calc(-61.9px + 28.61vw), 350px)', // 1024 -> 1440 (up)
+  };
+
+  const height = {
+    xs: 214,
+    sm: 'clamp(170px, calc(239.4px - 6.78vw), 214px)',
+    md: 'clamp(170px, calc(10px + 15.63vw), 235px)',
+  };
+
+  const iconSize = {
+    xs: 50,
+    md: 'clamp(35px, calc(-1.1px + 3.5vw), 50px)', // Fixed: 35 at 1024, 50 at 1440
+  };
+
+  const stackSpacing = {
+    xs: '10px',
+    md: 'clamp(10px, calc(-13.1px + 2.25vw), 20px)',
+  };
+
   return (
     <Card
       title="Recent Transaction"
       sx={{
-        width: '100%',
-        maxWidth: '21.875rem', // 350px
-        height: 'auto',
-        aspectRatio: {
-          xs: '325/214',
-          md: '231/170',
-          lg: '350/235'
-        },
-        borderRadius: {
-          xs: '0.9375rem', // 15px
-          md: '1.25rem', // 20px
-          lg: '1.5625rem' // 25px
-        },
+        width,
+        height,
         display: 'flex',
         flexDirection: 'column',
-        // Internal padding in rem
-        p: {
-          xs: '1.25rem', // 20px
-          md: '1.5rem',  // 24px
-          lg: '1.5rem' // 30px
-        }
+        p: { xs: '15px', tablet: '25px' },
+        borderRadius: { xs: '15px', tablet: '25px' },
+        boxSizing: 'border-box',
+        overflow: 'hidden'
       }}
     >
-      <Stack
-        sx={{
-          flex: 1,
-          justifyContent: 'space-between',
-          alignItems: 'stretch'
-        }}
-      >
+      <Stack spacing={stackSpacing} sx={{ flex: 1, justifyContent: 'center' }}>
         {transactions.map((item) => (
           <Stack
             key={item.id}
             direction="row"
             alignItems="center"
             justifyContent="space-between"
-            spacing="1rem"
             sx={{ width: '100%' }}
           >
-            <Stack direction="row" alignItems="center" spacing="1rem">
-              <Box sx={{
-                width: 'clamp(2.1875rem, 3.5vw, 3.125rem)', // Reduced to 35px - 50px
-                height: 'clamp(2.1875rem, 3.5vw, 3.125rem)',
-                borderRadius: '50%',
-                bgcolor: item.iconBg,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexShrink: 0,
-                '& svg': {
-                  fontSize: 'clamp(1.125rem, 1.75vw, 1.5rem)' // Reduced to 18px - 24px
-                }
-              }}>
+            <Stack direction="row" alignItems="center" spacing="15px">
+              <Box
+                sx={{
+                  width: iconSize,
+                  height: iconSize,
+                  borderRadius: '50%',
+                  bgcolor: item.iconBg,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0,
+                  '& svg': {
+                    fontSize: 'clamp(20px, 1.9vw, 28px)'
+                  }
+                }}
+              >
                 {item.icon}
               </Box>
-              <Stack spacing="0.125rem">
+              <Box>
                 <Typography
                   sx={{
-                    fontWeight: 600,
+                    fontWeight: 500,
                     color: '#232323',
-                    fontSize: 'clamp(0.8125rem, 1vw, 1rem)', // 13px - 16px
-                    lineHeight: 1.1
+                    fontSize: 'clamp(13px, 1.1vw, 16px)',
+                    lineHeight: 1.2
                   }}
                 >
                   {item.title}
@@ -110,21 +116,20 @@ export const RecentTransactions = () => {
                 <Typography
                   sx={{
                     color: '#718EBF',
-                    fontSize: 'clamp(0.6875rem, 0.8vw, 0.875rem)', // 11px - 14px
-                    lineHeight: 1
+                    fontSize: 'clamp(11px, 0.9vw, 15px)',
+                    lineHeight: 1.2
                   }}
                 >
                   {item.date}
                 </Typography>
-              </Stack>
+              </Box>
             </Stack>
             <Typography
               sx={{
-                fontWeight: 600,
+                fontWeight: 500,
                 color: item.type === 'positive' ? '#41D4A8' : '#FF4B4A',
-                fontSize: 'clamp(0.8125rem, 1vw, 1rem)', // 13px - 16px
-                whiteSpace: 'nowrap',
-                textAlign: 'right'
+                fontSize: 'clamp(14px, 1.1vw, 16px)',
+                whiteSpace: 'nowrap'
               }}
             >
               {item.amount}

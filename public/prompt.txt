@@ -1,1 +1,1 @@
-create pixel perfect CreditCard component svg_1440.svg image file exported from figma please make it pixel perfect
+Convert card_desktop, card_tablet and card_mobile for three resolutions 1440px for desktop, 1024px for tablet and 375px for mobile please pixel perfect CreditCard component from these three images in public/card directory please make the image fluid responsive so that it does not snap and fluidly resize instead.
