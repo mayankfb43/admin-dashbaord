@@ -1,7 +1,7 @@
 'use client';
 
 import { Box, Grid, Typography } from '@mui/material';
-import { CreditCard, RecentTransactions, GroupBarChart, PieChart, QuickTransfer, BalanceHistory } from '@organism';
+import { CreditCard, RecentTransactions, GroupBarChart, PieChart, QuickTransfer, BalanceHistory, TransactionTable, ProfileForm } from '@organism';
 import { Card } from '../../molecules';
 
 export const MainContent = ({ children }: { children?: React.ReactNode }) => {
@@ -53,6 +53,21 @@ export const MainContent = ({ children }: { children?: React.ReactNode }) => {
               <BalanceHistory />
             </Grid>
           </Grid>
+        </Grid>
+
+        {/* Third Row: Recent Transaction Table */}
+        <Grid size={12}>
+          <Box sx={{ mb: 2, mt: 4 }}>
+            <Typography variant="h6" sx={{ color: '#343C6A', fontWeight: 600, mb: 2 }}>Recent Transaction</Typography>
+            <TransactionTable />
+          </Box>
+        </Grid>
+
+        <Grid size={12}>
+          <Box sx={{ mb: 2, mt: 4 }}>
+            <Typography variant="h6" sx={{ color: '#343C6A', fontWeight: 600, mb: 2 }}>Recent Transaction</Typography>
+            <ProfileForm />
+          </Box>
         </Grid>
       </Grid>
 

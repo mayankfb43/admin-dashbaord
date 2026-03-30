@@ -1,1 +1,42 @@
-Convert card_desktop, card_tablet and card_mobile for three resolutions 1440px for desktop, 1024px for tablet and 375px for mobile please pixel perfect CreditCard component from these three images in public/card directory please make the image fluid responsive so that it does not snap and fluidly resize instead.
+
+
+You are a senior React + MUI5 engineer.
+
+Your task:
+Convert the given layout JSON into a pixel-perfect React component.
+
+Requirements:
+- Use MUI5 (Box, Stack, Typography, Button)
+- Use columns to control width and alignment
+- Apply rowLayout consistently to all rows
+- Render header using column labels
+- Map debit → error color, credit → success color
+- Align amount and action to the right
+- Use clean, reusable structure
+- Do NOT guess values
+
+Output:
+- Clean React component
+- No inline hacks
+- Readable and scalable
+
+
+
+STRICT RULES:
+- Render EXACTLY the columns defined in JSON
+- DO NOT add new columns
+- DO NOT add icons
+- DO NOT modify labels
+- DO NOT enhance UX
+- DO NOT add currency symbols unless present
+- DO NOT change button style
+
+Match the provided screenshot EXACTLY:
+- Same number of columns
+- Same spacing
+- Same visual hierarchy
+- No additional elements
+
+If output differs from JSON:
+- Reject your own output
+- Regenerate until it matches exactly

@@ -1,0 +1,1321 @@
+{
+  "metadata": {
+    "exportedAt": "2026-03-30T12:59:38.076Z",
+    "componentName": "Group 732",
+    "totalElements": 90,
+    "nestingDepth": 6,
+    "plugin": "Figma to JSON Exporter"
+  },
+  "designTokens": {
+    "colors": {
+      "color-rgb(255, 255, 255)": "rgb(255, 255, 255)",
+      "color-rgb(113, 142, 191)": "rgb(113, 142, 191)",
+      "color-rgb(230, 239, 245)": "rgb(230, 239, 245)",
+      "color-rgb(35, 35, 35)": "rgb(35, 35, 35)",
+      "color-rgb(254, 92, 115)": "rgb(254, 92, 115)",
+      "color-rgb(18, 50, 136)": "rgb(18, 50, 136)",
+      "color-rgb(22, 219, 170)": "rgb(22, 219, 170)",
+      "color-rgb(24, 20, 243)": "rgb(24, 20, 243)"
+    },
+    "fonts": {
+      "inter": {
+        "family": "Inter",
+        "sizes": {
+          "size-12": "12px"
+        },
+        "weights": {
+          "weight-500": "500",
+          "weight-400": "400"
+        }
+      }
+    },
+    "spacing": {},
+    "effects": {}
+  },
+  "structure": {
+    "name": "group-732",
+    "type": "GROUP",
+    "size": {
+      "w": 743,
+      "h": 277
+    },
+    "children": [
+      {
+        "name": "rectangle-157",
+        "type": "RECTANGLE",
+        "size": {
+          "w": 743,
+          "h": 277
+        },
+        "styles": {
+          "bg": "rgb(255, 255, 255)",
+          "radius": 20
+        }
+      },
+      {
+        "name": "group-100",
+        "type": "GROUP",
+        "size": {
+          "w": 667,
+          "h": 15
+        },
+        "children": [
+          {
+            "name": "description",
+            "type": "TEXT",
+            "size": {
+              "w": 66,
+              "h": 15
+            },
+            "content": "Description",
+            "styles": {
+              "bg": "rgb(113, 142, 191)",
+              "text": {
+                "family": "Inter",
+                "size": 12,
+                "weight": "500",
+                "align": "left"
+              }
+            }
+          },
+          {
+            "name": "card",
+            "type": "TEXT",
+            "size": {
+              "w": 28,
+              "h": 15
+            },
+            "content": "Card",
+            "styles": {
+              "bg": "rgb(113, 142, 191)",
+              "text": {
+                "family": "Inter",
+                "size": 12,
+                "weight": "500",
+                "align": "left"
+              }
+            }
+          },
+          {
+            "name": "date",
+            "type": "TEXT",
+            "size": {
+              "w": 27,
+              "h": 15
+            },
+            "content": "Date",
+            "styles": {
+              "bg": "rgb(113, 142, 191)",
+              "text": {
+                "family": "Inter",
+                "size": 12,
+                "weight": "500",
+                "align": "left"
+              }
+            }
+          },
+          {
+            "name": "type",
+            "type": "TEXT",
+            "size": {
+              "w": 29,
+              "h": 15
+            },
+            "content": "Type",
+            "styles": {
+              "bg": "rgb(113, 142, 191)",
+              "text": {
+                "family": "Inter",
+                "size": 12,
+                "weight": "500",
+                "align": "left"
+              }
+            }
+          },
+          {
+            "name": "transaction-id",
+            "type": "TEXT",
+            "size": {
+              "w": 83,
+              "h": 15
+            },
+            "content": "Transaction ID",
+            "styles": {
+              "bg": "rgb(113, 142, 191)",
+              "text": {
+                "family": "Inter",
+                "size": 12,
+                "weight": "500",
+                "align": "left"
+              }
+            }
+          },
+          {
+            "name": "amount",
+            "type": "TEXT",
+            "size": {
+              "w": 46,
+              "h": 15
+            },
+            "content": "Amount",
+            "styles": {
+              "bg": "rgb(113, 142, 191)",
+              "text": {
+                "family": "Inter",
+                "size": 12,
+                "weight": "500",
+                "align": "left"
+              }
+            }
+          },
+          {
+            "name": "receipt",
+            "type": "TEXT",
+            "size": {
+              "w": 44,
+              "h": 15
+            },
+            "content": "Receipt",
+            "styles": {
+              "bg": "rgb(113, 142, 191)",
+              "text": {
+                "family": "Inter",
+                "size": 12,
+                "weight": "500",
+                "align": "left"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "rectangle-224",
+        "type": "RECTANGLE",
+        "size": {
+          "w": 703,
+          "h": 1
+        },
+        "styles": {
+          "bg": "rgb(230, 239, 245)"
+        }
+      },
+      {
+        "name": "group-477",
+        "type": "GROUP",
+        "size": {
+          "w": 703,
+          "h": 39
+        },
+        "children": [
+          {
+            "name": "group-476",
+            "type": "GROUP",
+            "size": {
+              "w": 703,
+              "h": 39
+            },
+            "children": [
+              {
+                "name": "rectangle-242",
+                "type": "RECTANGLE",
+                "size": {
+                  "w": 703,
+                  "h": 1
+                },
+                "styles": {
+                  "bg": "rgb(230, 239, 245)"
+                }
+              },
+              {
+                "name": "group-475",
+                "type": "GROUP",
+                "size": {
+                  "w": 703,
+                  "h": 30
+                },
+                "children": [
+                  {
+                    "name": "spotify-subscription",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 115,
+                      "h": 15
+                    },
+                    "content": "Spotify Subscription",
+                    "styles": {
+                      "bg": "rgb(35, 35, 35)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "400",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "shopping",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 54,
+                      "h": 15
+                    },
+                    "content": "Shopping",
+                    "styles": {
+                      "bg": "rgb(35, 35, 35)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "400",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "-12548796",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 65,
+                      "h": 15
+                    },
+                    "content": "#12548796",
+                    "styles": {
+                      "bg": "rgb(35, 35, 35)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "400",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "1234-----",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 56,
+                      "h": 15
+                    },
+                    "content": "1234 ****",
+                    "styles": {
+                      "bg": "rgb(35, 35, 35)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "400",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "28-jan--12-30-am",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 99,
+                      "h": 15
+                    },
+                    "content": "28 Jan, 12.30 AM",
+                    "styles": {
+                      "bg": "rgb(35, 35, 35)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "400",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "--2-500",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 47,
+                      "h": 15
+                    },
+                    "content": "-$2,500",
+                    "styles": {
+                      "bg": "rgb(254, 92, 115)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "500",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "group-88",
+                    "type": "GROUP",
+                    "size": {
+                      "w": 80,
+                      "h": 30
+                    },
+                    "children": [
+                      {
+                        "name": "download",
+                        "type": "TEXT",
+                        "size": {
+                          "w": 57,
+                          "h": 15
+                        },
+                        "content": "Download",
+                        "styles": {
+                          "bg": "rgb(18, 50, 136)",
+                          "text": {
+                            "family": "Inter",
+                            "size": 12,
+                            "weight": "400",
+                            "align": "center"
+                          }
+                        }
+                      },
+                      {
+                        "name": "rectangle-62",
+                        "type": "RECTANGLE",
+                        "size": {
+                          "w": 80,
+                          "h": 30
+                        },
+                        "styles": {
+                          "border": {
+                            "width": 1,
+                            "color": "rgb(18, 50, 136)"
+                          },
+                          "radius": 50
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "name": "group-474",
+                    "type": "GROUP",
+                    "size": {
+                      "w": 20,
+                      "h": 20
+                    },
+                    "children": [
+                      {
+                        "name": "ellipse-21--stroke-",
+                        "type": "VECTOR",
+                        "size": {
+                          "w": 20,
+                          "h": 20
+                        },
+                        "styles": {
+                          "bg": "rgb(113, 142, 191)"
+                        }
+                      },
+                      {
+                        "name": "arrow-1--stroke-",
+                        "type": "VECTOR",
+                        "size": {
+                          "w": 8,
+                          "h": 7
+                        },
+                        "styles": {
+                          "bg": "rgb(113, 142, 191)"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "group-478",
+        "type": "GROUP",
+        "size": {
+          "w": 703,
+          "h": 39
+        },
+        "children": [
+          {
+            "name": "group-476",
+            "type": "GROUP",
+            "size": {
+              "w": 703,
+              "h": 39
+            },
+            "children": [
+              {
+                "name": "rectangle-242",
+                "type": "RECTANGLE",
+                "size": {
+                  "w": 703,
+                  "h": 1
+                },
+                "styles": {
+                  "bg": "rgb(230, 239, 245)"
+                }
+              },
+              {
+                "name": "group-475",
+                "type": "GROUP",
+                "size": {
+                  "w": 703,
+                  "h": 30
+                },
+                "children": [
+                  {
+                    "name": "freepik-sales",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 76,
+                      "h": 15
+                    },
+                    "content": "Freepik Sales",
+                    "styles": {
+                      "bg": "rgb(35, 35, 35)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "400",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "transfer",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 48,
+                      "h": 15
+                    },
+                    "content": "Transfer",
+                    "styles": {
+                      "bg": "rgb(35, 35, 35)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "400",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "-12548796",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 65,
+                      "h": 15
+                    },
+                    "content": "#12548796",
+                    "styles": {
+                      "bg": "rgb(35, 35, 35)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "400",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "1234-----",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 56,
+                      "h": 15
+                    },
+                    "content": "1234 ****",
+                    "styles": {
+                      "bg": "rgb(35, 35, 35)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "400",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "25-jan--10-40-pm",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 98,
+                      "h": 15
+                    },
+                    "content": "25 Jan, 10.40 PM",
+                    "styles": {
+                      "bg": "rgb(35, 35, 35)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "400",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "--750",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 38,
+                      "h": 15
+                    },
+                    "content": "+$750",
+                    "styles": {
+                      "bg": "rgb(22, 219, 170)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "500",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "group-88",
+                    "type": "GROUP",
+                    "size": {
+                      "w": 80,
+                      "h": 30
+                    },
+                    "children": [
+                      {
+                        "name": "download",
+                        "type": "TEXT",
+                        "size": {
+                          "w": 57,
+                          "h": 15
+                        },
+                        "content": "Download",
+                        "styles": {
+                          "bg": "rgb(18, 50, 136)",
+                          "text": {
+                            "family": "Inter",
+                            "size": 12,
+                            "weight": "400",
+                            "align": "center"
+                          }
+                        }
+                      },
+                      {
+                        "name": "rectangle-62",
+                        "type": "RECTANGLE",
+                        "size": {
+                          "w": 80,
+                          "h": 30
+                        },
+                        "styles": {
+                          "border": {
+                            "width": 1,
+                            "color": "rgb(18, 50, 136)"
+                          },
+                          "radius": 50
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "name": "group-474",
+                    "type": "GROUP",
+                    "size": {
+                      "w": 20,
+                      "h": 20
+                    },
+                    "children": [
+                      {
+                        "name": "ellipse-21--stroke-",
+                        "type": "VECTOR",
+                        "size": {
+                          "w": 20,
+                          "h": 20
+                        },
+                        "styles": {
+                          "bg": "rgb(113, 142, 191)"
+                        }
+                      },
+                      {
+                        "name": "arrow-1--stroke-",
+                        "type": "VECTOR",
+                        "size": {
+                          "w": 8,
+                          "h": 7
+                        },
+                        "styles": {
+                          "bg": "rgb(113, 142, 191)"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "group-479",
+        "type": "GROUP",
+        "size": {
+          "w": 703,
+          "h": 39
+        },
+        "children": [
+          {
+            "name": "group-476",
+            "type": "GROUP",
+            "size": {
+              "w": 703,
+              "h": 39
+            },
+            "children": [
+              {
+                "name": "rectangle-242",
+                "type": "RECTANGLE",
+                "size": {
+                  "w": 703,
+                  "h": 1
+                },
+                "styles": {
+                  "bg": "rgb(230, 239, 245)"
+                }
+              },
+              {
+                "name": "group-475",
+                "type": "GROUP",
+                "size": {
+                  "w": 703,
+                  "h": 30
+                },
+                "children": [
+                  {
+                    "name": "mobile-service",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 84,
+                      "h": 15
+                    },
+                    "content": "Mobile Service",
+                    "styles": {
+                      "bg": "rgb(35, 35, 35)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "400",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "service",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 43,
+                      "h": 15
+                    },
+                    "content": "Service",
+                    "styles": {
+                      "bg": "rgb(35, 35, 35)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "400",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "-12548796",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 65,
+                      "h": 15
+                    },
+                    "content": "#12548796",
+                    "styles": {
+                      "bg": "rgb(35, 35, 35)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "400",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "1234-----",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 56,
+                      "h": 15
+                    },
+                    "content": "1234 ****",
+                    "styles": {
+                      "bg": "rgb(35, 35, 35)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "400",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "20-jan--10-40-pm",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 99,
+                      "h": 15
+                    },
+                    "content": "20 Jan, 10.40 PM",
+                    "styles": {
+                      "bg": "rgb(35, 35, 35)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "400",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "--150",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 35,
+                      "h": 15
+                    },
+                    "content": "-$150",
+                    "styles": {
+                      "bg": "rgb(254, 92, 115)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "500",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "group-88",
+                    "type": "GROUP",
+                    "size": {
+                      "w": 80,
+                      "h": 30
+                    },
+                    "children": [
+                      {
+                        "name": "download",
+                        "type": "TEXT",
+                        "size": {
+                          "w": 57,
+                          "h": 15
+                        },
+                        "content": "Download",
+                        "styles": {
+                          "bg": "rgb(24, 20, 243)",
+                          "text": {
+                            "family": "Inter",
+                            "size": 12,
+                            "weight": "400",
+                            "align": "center"
+                          }
+                        }
+                      },
+                      {
+                        "name": "rectangle-62",
+                        "type": "RECTANGLE",
+                        "size": {
+                          "w": 80,
+                          "h": 30
+                        },
+                        "styles": {
+                          "border": {
+                            "width": 1,
+                            "color": "rgb(24, 20, 243)"
+                          },
+                          "radius": 50
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "name": "group-474",
+                    "type": "GROUP",
+                    "size": {
+                      "w": 20,
+                      "h": 20
+                    },
+                    "children": [
+                      {
+                        "name": "ellipse-21--stroke-",
+                        "type": "VECTOR",
+                        "size": {
+                          "w": 20,
+                          "h": 20
+                        },
+                        "styles": {
+                          "bg": "rgb(113, 142, 191)"
+                        }
+                      },
+                      {
+                        "name": "arrow-1--stroke-",
+                        "type": "VECTOR",
+                        "size": {
+                          "w": 8,
+                          "h": 7
+                        },
+                        "styles": {
+                          "bg": "rgb(113, 142, 191)"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "group-480",
+        "type": "GROUP",
+        "size": {
+          "w": 703,
+          "h": 39
+        },
+        "children": [
+          {
+            "name": "group-476",
+            "type": "GROUP",
+            "size": {
+              "w": 703,
+              "h": 39
+            },
+            "children": [
+              {
+                "name": "rectangle-242",
+                "type": "RECTANGLE",
+                "size": {
+                  "w": 703,
+                  "h": 1
+                },
+                "styles": {
+                  "bg": "rgb(230, 239, 245)"
+                }
+              },
+              {
+                "name": "group-475",
+                "type": "GROUP",
+                "size": {
+                  "w": 703,
+                  "h": 30
+                },
+                "children": [
+                  {
+                    "name": "wilson",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 38,
+                      "h": 15
+                    },
+                    "content": "Wilson",
+                    "styles": {
+                      "bg": "rgb(35, 35, 35)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "400",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "transfer",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 48,
+                      "h": 15
+                    },
+                    "content": "Transfer",
+                    "styles": {
+                      "bg": "rgb(35, 35, 35)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "400",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "-12548796",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 65,
+                      "h": 15
+                    },
+                    "content": "#12548796",
+                    "styles": {
+                      "bg": "rgb(35, 35, 35)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "400",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "1234-----",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 56,
+                      "h": 15
+                    },
+                    "content": "1234 ****",
+                    "styles": {
+                      "bg": "rgb(35, 35, 35)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "400",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "15-jan--03-29-pm",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 98,
+                      "h": 15
+                    },
+                    "content": "15 Jan, 03.29 PM",
+                    "styles": {
+                      "bg": "rgb(35, 35, 35)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "400",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "--1050",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 42,
+                      "h": 15
+                    },
+                    "content": "-$1050",
+                    "styles": {
+                      "bg": "rgb(254, 92, 115)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "500",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "group-88",
+                    "type": "GROUP",
+                    "size": {
+                      "w": 80,
+                      "h": 30
+                    },
+                    "children": [
+                      {
+                        "name": "download",
+                        "type": "TEXT",
+                        "size": {
+                          "w": 57,
+                          "h": 15
+                        },
+                        "content": "Download",
+                        "styles": {
+                          "bg": "rgb(18, 50, 136)",
+                          "text": {
+                            "family": "Inter",
+                            "size": 12,
+                            "weight": "400",
+                            "align": "center"
+                          }
+                        }
+                      },
+                      {
+                        "name": "rectangle-62",
+                        "type": "RECTANGLE",
+                        "size": {
+                          "w": 80,
+                          "h": 30
+                        },
+                        "styles": {
+                          "border": {
+                            "width": 1,
+                            "color": "rgb(18, 50, 136)"
+                          },
+                          "radius": 50
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "name": "group-474",
+                    "type": "GROUP",
+                    "size": {
+                      "w": 20,
+                      "h": 20
+                    },
+                    "children": [
+                      {
+                        "name": "ellipse-21--stroke-",
+                        "type": "VECTOR",
+                        "size": {
+                          "w": 20,
+                          "h": 20
+                        },
+                        "styles": {
+                          "bg": "rgb(113, 142, 191)"
+                        }
+                      },
+                      {
+                        "name": "arrow-1--stroke-",
+                        "type": "VECTOR",
+                        "size": {
+                          "w": 8,
+                          "h": 7
+                        },
+                        "styles": {
+                          "bg": "rgb(113, 142, 191)"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "group-481",
+        "type": "GROUP",
+        "size": {
+          "w": 703,
+          "h": 30
+        },
+        "children": [
+          {
+            "name": "group-476",
+            "type": "GROUP",
+            "size": {
+              "w": 703,
+              "h": 30
+            },
+            "children": [
+              {
+                "name": "group-475",
+                "type": "GROUP",
+                "size": {
+                  "w": 703,
+                  "h": 30
+                },
+                "children": [
+                  {
+                    "name": "emilly",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 33,
+                      "h": 15
+                    },
+                    "content": "Emilly",
+                    "styles": {
+                      "bg": "rgb(35, 35, 35)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "400",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "transfer",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 48,
+                      "h": 15
+                    },
+                    "content": "Transfer",
+                    "styles": {
+                      "bg": "rgb(35, 35, 35)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "400",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "-12548796",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 65,
+                      "h": 15
+                    },
+                    "content": "#12548796",
+                    "styles": {
+                      "bg": "rgb(35, 35, 35)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "400",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "1234-----",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 56,
+                      "h": 15
+                    },
+                    "content": "1234 ****",
+                    "styles": {
+                      "bg": "rgb(35, 35, 35)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "400",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "14-jan--10-40-pm",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 97,
+                      "h": 15
+                    },
+                    "content": "14 Jan, 10.40 PM",
+                    "styles": {
+                      "bg": "rgb(35, 35, 35)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "400",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "--840",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 39,
+                      "h": 15
+                    },
+                    "content": "+$840",
+                    "styles": {
+                      "bg": "rgb(22, 219, 170)",
+                      "text": {
+                        "family": "Inter",
+                        "size": 12,
+                        "weight": "500",
+                        "align": "left"
+                      }
+                    }
+                  },
+                  {
+                    "name": "group-88",
+                    "type": "GROUP",
+                    "size": {
+                      "w": 80,
+                      "h": 30
+                    },
+                    "children": [
+                      {
+                        "name": "download",
+                        "type": "TEXT",
+                        "size": {
+                          "w": 57,
+                          "h": 15
+                        },
+                        "content": "Download",
+                        "styles": {
+                          "bg": "rgb(18, 50, 136)",
+                          "text": {
+                            "family": "Inter",
+                            "size": 12,
+                            "weight": "400",
+                            "align": "center"
+                          }
+                        }
+                      },
+                      {
+                        "name": "rectangle-62",
+                        "type": "RECTANGLE",
+                        "size": {
+                          "w": 80,
+                          "h": 30
+                        },
+                        "styles": {
+                          "border": {
+                            "width": 1,
+                            "color": "rgb(18, 50, 136)"
+                          },
+                          "radius": 50
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "name": "group-474",
+                    "type": "GROUP",
+                    "size": {
+                      "w": 20,
+                      "h": 20
+                    },
+                    "children": [
+                      {
+                        "name": "ellipse-21--stroke-",
+                        "type": "VECTOR",
+                        "size": {
+                          "w": 20,
+                          "h": 20
+                        },
+                        "styles": {
+                          "bg": "rgb(113, 142, 191)"
+                        }
+                      },
+                      {
+                        "name": "arrow-1--stroke-",
+                        "type": "VECTOR",
+                        "size": {
+                          "w": 8,
+                          "h": 7
+                        },
+                        "styles": {
+                          "bg": "rgb(113, 142, 191)"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "summary": {
+    "components": 0,
+    "instances": 0,
+    "frames": 0,
+    "texts": 42,
+    "hasAutoLayout": false,
+    "hasEffects": false
+  }
+}
