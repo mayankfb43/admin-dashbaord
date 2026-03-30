@@ -1,197 +1,155 @@
-import { Box, Stack, Typography, Theme } from '@mui/material';
-import Image from 'next/image';
+import React from 'react';
+import { Box, Typography, useTheme } from '@mui/material';
 
 interface CreditCardProps {
-  variant?: 'active' | 'inactive';
   balance?: string;
   holder?: string;
   expiry?: string;
   cardNumber?: string;
+  variant?: 'active' | 'inactive';
 }
 
-export const CreditCard = ({
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  variant = 'active',
+/**
+ * CreditCard Component - Fluid Responsive Implementation
+ * Replicates svg_375 (375px), svg_1208 (1208px), and svg_1440 (1440px)
+ */
+export const CreditCard: React.FC<CreditCardProps> = ({
   balance = '$5,756',
   holder = 'Eddy Cusuma',
   expiry = '12/22',
   cardNumber = '3778 **** **** 1234',
-}: CreditCardProps) => {
+  variant = 'active',
+}) => {
+  const isActive = variant === 'active';
+  const theme = useTheme();
+
+  // Color Palette from Design
+  const cardBg = isActive
+    ? 'linear-gradient(108deg, #4C49ED 0%, #0A06F4 100%)'
+    : '#FFFFFF';
+  const textColor = isActive ? '#FFFFFF' : '#343C6A';
+  const labelColor = isActive ? 'rgba(255, 255, 255, 0.7)' : '#718EBF';
+
+  /**
+   * FLUID SCALING LOGIC
+   * Targets: 
+   * - 375px viewport: 265x170px card
+   * - 1208px viewport: 231x170px card
+   * - 1440px viewport: 350x235px card
+   */
+  const fluidWidth = {
+    xs: '265px', // Mobile
+    sm: 'clamp(231px, calc(280px - 4vw), 265px)', // 375 -> 1208 (decreasing)
+    tablet: 'clamp(231px, calc(-388px + 51.3vw), 350px)', // 1208 -> 1440 (increasing)
+  };
+
+  const fluidHeight = {
+    xs: '170px',
+    tablet: 'clamp(170px, calc(-168px + 28vw), 235px)', // 1208 -> 1440
+  };
+
+  const fluidRadius = {
+    xs: '15px',
+    tablet: 'clamp(20px, calc(-5px + 2vw), 25px)', // 1208 -> 1440
+  };
+
+  const bottomSectionHeight = {
+    xs: '51px',
+    tablet: 'clamp(51px, calc(-47px + 8vw), 70px)', // 119 split at 1208, 165 split at 1440
+  };
 
   return (
-    <Box sx={(theme: Theme) => ({
-      width: '100%',
-      maxWidth: {
-        xs: 325,
-        md: 231,
-        lg: 350
-      },
-      aspectRatio: {
-        xs: '325/214',
-        md: '231/170',
-        lg: '350/235'
-      },
-      background: variant === 'active'
-        ? 'linear-gradient(135deg, #4C49ED 0%, #0A06F4 100%)'
-        : theme.palette.background.paper,
-      border: variant === 'inactive' ? `1px solid ${theme.palette.divider}` : 'none',
-      borderRadius: { xs: '15px', md: '20px', lg: '25px' },
-      position: 'relative',
-      overflow: 'hidden',
-      color: variant === 'active' ? 'common.white' : 'text.primary',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'space-between',
-      fontFamily: theme.typography.fontFamily,
-    })}>
-      {/* Top Section: Balance & Chip */}
-      <Stack
-        direction="row"
-        justifyContent="space-between"
-        alignItems="flex-start"
-        sx={{
-          pt: 'clamp(1rem, 2vw, 1.6875rem)', // Fluid top padding
-          px: 'clamp(1.25rem, 2vw, 1.625rem)', // Fluid side padding (20px -> 26px)
-          pb: 0
-        }}
-      >
-        <Stack>
-          <Typography
-            variant="caption"
-            sx={{
-              opacity: 0.7,
-              lineHeight: 1,
-              fontSize: 'clamp(0.625rem, 0.8vw, 0.75rem)' // 10px -> 12px
-            }}
-          >
-            Balance
-          </Typography>
-          <Typography
-            variant="h3"
-            sx={{
-              fontWeight: 600,
-              fontSize: {
-                xs: 'clamp(1rem, 1.4vw, 1.25rem)',
-                md: '1.125rem', // 18px at 1208px
-                lg: '1.25rem'   // 20px at 1440px
-              },
-              lineHeight: 1.1,
-              letterSpacing: '-0.01em',
-            }}
-          >
-            {balance}
-          </Typography>
-        </Stack>
-        <Box sx={{ width: 'clamp(28px, 2.5vw, 35px)', height: 'auto' }}>
-          <Image
-            src={variant === 'active' ? "/Chip_Card.svg" : "/Chip_Card_2.png"}
-            alt="card chip"
-            width={35}
-            height={35}
-            style={{
-              width: '100%',
-              height: 'auto',
-              filter: variant === 'inactive' ? 'grayscale(1) brightness(0)' : 'none'
-            }}
-          />
-        </Box>
-      </Stack>
+    <Box
+      sx={{
+        width: fluidWidth,
+        height: fluidHeight,
+        borderRadius: fluidRadius,
+        background: cardBg,
+        color: textColor,
+        position: 'relative',
+        overflow: 'hidden',
+        boxShadow: isActive ? '0px 10px 20px rgba(76, 73, 237, 0.2)' : 'none',
+        border: isActive ? 'none' : '1px solid #DFEAF2',
+        fontFamily: "'Inter', sans-serif",
+      }}
+    >
+      {/* 1. Header Section (Balance & Chip) */}
+      <Box sx={{ position: 'absolute', top: '12%', left: '7%', right: '7%' }}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+          <Box>
+            <Typography variant="caption" sx={{ color: labelColor, fontSize: 'clamp(10px, 1vw, 12px)', lineHeight: 1 }}>
+              Balance
+            </Typography>
+            <Typography sx={{ fontWeight: 600, fontSize: 'clamp(16px, 1.5vw, 20px)', mt: 0.5, lineHeight: 1 }}>
+              {balance}
+            </Typography>
+          </Box>
 
-      {/* Middle Section: Holder & Expiry */}
-      <Stack
-        direction="row"
-        spacing={8.5} // 68px
-        sx={{
-          px: { xs: '1.25rem', md: '1.375rem', lg: '1.625rem' }, // 20px, 22px, 26px
-          mb: 'auto',
-          pt: { xs: '1.5rem', md: '1.75rem', lg: '2.375rem' } // 24px, 28px, 38px
-        }}
-      >
-        <Stack spacing={0.25}>
-          <Typography
-            variant="overline"
-            sx={{
-              opacity: 0.7,
-              lineHeight: 1,
-              fontSize: { xs: '0.5rem', md: '0.5625rem', lg: '0.625rem' } // 8px, 9px, 10px
-            }}
-          >
-            CARD HOLDER
+          <Box sx={{ width: 'clamp(25px, 2.5vw, 35px)', height: 'clamp(25px, 2.5vw, 35px)' }}>
+            <svg width="100%" height="100%" viewBox="0 0 35 35" fill="none">
+              <rect width="35" height="35" rx="4" fill={isActive ? "#FFF" : "#343C6A"} fillOpacity={isActive ? 0.3 : 0.1} />
+              <path d="M5 10H30M5 17H30M5 24H30M12 5V30M22 5V30" stroke={isActive ? "#FFF" : "#343C6A"} strokeWidth="0.5" strokeOpacity="0.3" />
+            </svg>
+          </Box>
+        </Box>
+      </Box>
+
+      {/* 2. Middle Section (Holder & Expiry) */}
+      <Box sx={{ position: 'absolute', top: '45%', left: '7%', right: '7%', display: 'flex', gap: 'clamp(20px, 5vw, 60px)' }}>
+        <Box>
+          <Typography variant="caption" sx={{ color: labelColor, textTransform: 'uppercase', fontSize: 'clamp(9px, 0.8vw, 12px)', lineHeight: 1 }}>
+            Card Holder
           </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              fontWeight: 600,
-              fontSize: { xs: '0.75rem', md: '0.8125rem', lg: '0.9375rem' }, // 12px, 13px, 15px
-              whiteSpace: 'nowrap'
-            }}
-          >
+          <Typography sx={{ fontWeight: 600, fontSize: 'clamp(12px, 1vw, 15px)', mt: 0.5, lineHeight: 1 }}>
             {holder}
           </Typography>
-        </Stack>
-        <Stack spacing={0.25}>
-          <Typography
-            variant="overline"
-            sx={{
-              opacity: 0.7,
-              lineHeight: 1,
-              fontSize: { xs: '0.5rem', md: '0.5625rem', lg: '0.625rem' } // 8px, 9px, 10px
-            }}
-          >
-            VALID THRU
+        </Box>
+        <Box>
+          <Typography variant="caption" sx={{ color: labelColor, textTransform: 'uppercase', fontSize: 'clamp(9px, 0.8vw, 12px)', lineHeight: 1 }}>
+            Valid Thru
           </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              fontWeight: 600,
-              fontSize: { xs: '0.75rem', md: '0.8125rem', lg: '0.9375rem' } // 12px, 13px, 15px
-            }}
-          >
+          <Typography sx={{ fontWeight: 600, fontSize: 'clamp(12px, 1vw, 15px)', mt: 0.5, lineHeight: 1 }}>
             {expiry}
           </Typography>
-        </Stack>
-      </Stack>
+        </Box>
+      </Box>
 
-      {/* Bottom Section: Card Number & Footer */}
+      {/* 3. Bottom Accent Section (Number & Mastercard) */}
       <Box
-        sx={(theme) => ({
-          background: variant === 'active'
-            ? 'linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%)'
-            : 'none',
-          borderTop: variant === 'inactive' ? `1px solid ${theme.palette.divider}` : 'none',
-          px: 'clamp(1.25rem, 2vw, 1.625rem)', // Fluid side padding
-          py: 'clamp(1rem, 1.5vw, 1.5rem)', // 16px -> 24px
+        sx={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: bottomSectionHeight,
+          background: isActive ? 'linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%)' : 'transparent',
           display: 'flex',
+          alignItems: 'center',
           justifyContent: 'space-between',
-          alignItems: 'center'
-        })}
+          px: '7%',
+        }}
       >
         <Typography
-          variant="h3"
           sx={{
+            fontSize: 'clamp(15px, 1.8vw, 22px)',
             fontWeight: 600,
-            fontSize: { xs: '1rem', md: '1.125rem', lg: '1.375rem' }, // 16px, 18px, 22px
             letterSpacing: '1px',
-            whiteSpace: 'nowrap'
+            lineHeight: 1
           }}
         >
           {cardNumber}
         </Typography>
-        <Stack direction="row" spacing={-1.5}>
-          <Box sx={{
-            width: 'clamp(24px, 2.5vw, 30px)',
-            height: 'clamp(24px, 2.5vw, 30px)',
-            bgcolor: variant === 'active' ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.2)',
-            borderRadius: '50%'
-          }} />
-          <Box sx={{
-            width: 'clamp(24px, 2.5vw, 30px)',
-            height: 'clamp(24px, 2.5vw, 30px)',
-            bgcolor: variant === 'active' ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.2)',
-            borderRadius: '50%'
-          }} />
-        </Stack>
+
+        <Box sx={{ position: 'relative', width: 'clamp(30px, 3.5vw, 44px)', height: 'clamp(20px, 2.5vw, 30px)' }}>
+          <Box sx={{ width: 'clamp(20px, 2.5vw, 30px)', height: 'clamp(20px, 2.5vw, 30px)', borderRadius: '50%', backgroundColor: isActive ? 'rgba(255,255,255,0.5)' : 'rgba(145,153,175,0.5)', position: 'absolute', left: 0 }} />
+          <Box sx={{ width: 'clamp(20px, 2.5vw, 30px)', height: 'clamp(20px, 2.5vw, 30px)', borderRadius: '50%', backgroundColor: isActive ? 'rgba(255,255,255,0.5)' : 'rgba(145,153,175,0.5)', position: 'absolute', right: 0 }} />
+        </Box>
       </Box>
+
+      {/* Background Mask for Inactive Variant */}
+      {!isActive && (
+        <Box sx={{ position: 'absolute', inset: 0, zIndex: -1, background: '#FFFFFF' }} />
+      )}
     </Box>
   );
 };

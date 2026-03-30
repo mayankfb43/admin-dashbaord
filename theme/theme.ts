@@ -30,6 +30,15 @@ declare module '@mui/material/styles' {
       sectionMargin?: number;
     };
   }
+
+  interface BreakpointOverrides {
+    xs: true;
+    sm: true;
+    md: true;
+    tablet: true; // New breakpoint
+    lg: true;
+    xl: true;
+  }
 }
 
 // -----------------------------------
@@ -65,6 +74,64 @@ export const TOKENS = {
       "09": "4rem",     // 64px
       "10": "4.5rem",   // 72px
     }
+  },
+  color: {
+    pink: {
+      100: '#FCF1FD',
+      200: '#FAE1FA',
+      300: '#F5C0EF',
+      400: '#F19EDC',
+      500: '#EA3FB8',
+      600: '#D732A8',
+      700: '#BA2A92',
+      800: '#8A226F',
+      900: '#57184A',
+      1000: '#3F1536'
+    },
+    blue: {
+      100: '#F1F6FD',
+      200: '#E1EBFA',
+      300: '#C0D4F5',
+      400: '#9EBEF1',
+      500: '#3F81EA',
+      600: '#3271D7',
+      700: '#2A61BA',
+      800: '#224A8A',
+      900: '#183057',
+      1000: '#15253F'
+    }
+  },
+  size: {
+    space: {
+      0: 0,
+      50: 2,
+      100: 4,
+      150: 6,
+      200: 8,
+      300: 12,
+      400: 16,
+      600: 24,
+      800: 32,
+      1200: 48,
+      1600: 64,
+      2400: 96,
+      4000: 160
+    },
+    radius: {
+      100: 4,
+      200: 8,
+      400: 16,
+      full: 9999
+    },
+    stroke: {
+      border: 1,
+      focusRing: 2
+    },
+    icon: {
+      small: 24,
+      medium: 32,
+      large: 40
+    }
   }
 } as const;
 
@@ -96,6 +163,7 @@ const theme = createTheme({
       xs: 0,
       sm: 375,
       md: 1024,
+      tablet: 1208,
       lg: 1440,
       xl: 1920,
     },
