@@ -74,7 +74,7 @@ export const BalanceHistory = () => {
       .y((d) => y(d.value))
       .curve(d3.curveBasis);
 
-    // Grid lines - use theme typography/palette
+    // Grid lines
     const yAxis = d3.axisLeft(y).ticks(5).tickSize(-chartWidth).tickPadding(10);
     const xAxis = d3.axisBottom(x as d3.AxisScale<string>).tickSize(-chartHeight).tickPadding(10);
 
@@ -82,17 +82,17 @@ export const BalanceHistory = () => {
     yGrid.select('.domain').remove();
     yGrid.selectAll('.tick line').attr('stroke', theme.palette.divider).attr('stroke-dasharray', '4,4');
     yGrid.selectAll('.tick text')
-      .attr('fill', theme.palette.text.secondary)
-      .attr('font-size', theme.typography.caption.fontSize as string)
-      .attr('font-family', theme.typography.fontFamily as string);
+      .attr('fill', '#718EBF') // Source of truth for labels
+      .attr('font-size', '0.75rem') // 12px fluid base
+      .attr('font-family', 'Inter, sans-serif');
 
     const xGrid = svg.append('g').attr('transform', `translate(0,${chartHeight})`).call(xAxis);
     xGrid.select('.domain').remove();
     xGrid.selectAll('.tick line').attr('stroke', theme.palette.divider).attr('stroke-dasharray', '4,4');
     xGrid.selectAll('.tick text')
-      .attr('fill', theme.palette.text.secondary)
-      .attr('font-size', theme.typography.caption.fontSize as string)
-      .attr('font-family', theme.typography.fontFamily as string);
+      .attr('fill', '#718EBF')
+      .attr('font-size', '0.75rem')
+      .attr('font-family', 'Inter, sans-serif');
 
     // Gradient
     const gradient = svg
@@ -104,8 +104,8 @@ export const BalanceHistory = () => {
       .attr('x2', '0%')
       .attr('y2', '100%');
 
-    gradient.append('stop').attr('offset', '0%').attr('stop-color', theme.palette.primary.main).attr('stop-opacity', 0.2);
-    gradient.append('stop').attr('offset', '100%').attr('stop-color', theme.palette.primary.main).attr('stop-opacity', 0);
+    gradient.append('stop').attr('offset', '0%').attr('stop-color', '#1814F3').attr('stop-opacity', 0.2);
+    gradient.append('stop').attr('offset', '100%').attr('stop-color', '#1814F3').attr('stop-opacity', 0);
 
     // Area
     svg.append('path').datum(data).attr('fill', 'url(#area-gradient)').attr('d', area);
@@ -115,7 +115,7 @@ export const BalanceHistory = () => {
       .append('path')
       .datum(data)
       .attr('fill', 'none')
-      .attr('stroke', theme.palette.primary.main)
+      .attr('stroke', '#1814F3')
       .attr('stroke-width', 3)
       .attr('d', line);
 
@@ -125,8 +125,13 @@ export const BalanceHistory = () => {
     <Card 
       title="Balance History"
       sx={{ 
-        p: (theme: Theme) => theme.customSpacing.cardPadding, 
-        height: (theme: Theme) => theme.layout.balanceCardHeight, 
+        height: '100%',
+        aspectRatio: {
+            xs: '325 / 195',
+            md: '423 / 220',
+            lg: '635 / 276',
+        },
+        p: '1.5625rem', // 25px
         overflow: 'hidden',
       }}
     >

@@ -21,7 +21,11 @@ export const CreditCard = ({
   return (
     <Box sx={(theme: Theme) => ({
       width: '100%',
-      maxWidth: 350,
+      maxWidth: {
+        xs: 325,
+        md: 231,
+        lg: 350
+      },
       aspectRatio: {
         xs: '325/214',
         md: '231/170',
@@ -38,6 +42,7 @@ export const CreditCard = ({
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-between',
+      fontFamily: theme.typography.fontFamily,
     })}>
       {/* Top Section: Balance & Chip */}
       <Stack
@@ -45,26 +50,33 @@ export const CreditCard = ({
         justifyContent="space-between"
         alignItems="flex-start"
         sx={{
-          p: (theme) => theme.spacing(3),
+          pt: 'clamp(1rem, 2vw, 1.6875rem)', // Fluid top padding
+          px: 'clamp(1.25rem, 2vw, 1.625rem)', // Fluid side padding (20px -> 26px)
           pb: 0
         }}
       >
-        <Stack spacing={0.5}>
+        <Stack>
           <Typography
-            variant="overline"
+            variant="caption"
             sx={{
               opacity: 0.7,
               lineHeight: 1,
-              fontSize: 'clamp(10px, 0.8vw, 12px)'
+              fontSize: 'clamp(0.625rem, 0.8vw, 0.75rem)' // 10px -> 12px
             }}
           >
             Balance
           </Typography>
           <Typography
-            variant="h6"
+            variant="h3"
             sx={{
               fontWeight: 600,
-              fontSize: 'clamp(16px, 1.2vw, 20px)'
+              fontSize: {
+                xs: 'clamp(1rem, 1.4vw, 1.25rem)',
+                md: '1.125rem', // 18px at 1208px
+                lg: '1.25rem'   // 20px at 1440px
+              },
+              lineHeight: 1.1,
+              letterSpacing: '-0.01em',
             }}
           >
             {balance}
@@ -88,20 +100,20 @@ export const CreditCard = ({
       {/* Middle Section: Holder & Expiry */}
       <Stack
         direction="row"
-        spacing={8}
+        spacing={8.5} // 68px
         sx={{
-          px: (theme) => theme.spacing(3),
+          px: { xs: '1.25rem', md: '1.375rem', lg: '1.625rem' }, // 20px, 22px, 26px
           mb: 'auto',
-          pt: (theme) => theme.spacing(2)
+          pt: { xs: '1.5rem', md: '1.75rem', lg: '2.375rem' } // 24px, 28px, 38px
         }}
       >
-        <Stack spacing={0.5}>
+        <Stack spacing={0.25}>
           <Typography
             variant="overline"
             sx={{
               opacity: 0.7,
               lineHeight: 1,
-              fontSize: 'clamp(8px, 0.7vw, 10px)'
+              fontSize: { xs: '0.5rem', md: '0.5625rem', lg: '0.625rem' } // 8px, 9px, 10px
             }}
           >
             CARD HOLDER
@@ -110,20 +122,20 @@ export const CreditCard = ({
             variant="body1"
             sx={{
               fontWeight: 600,
-              fontSize: 'clamp(12px, 1.1vw, 15px)',
+              fontSize: { xs: '0.75rem', md: '0.8125rem', lg: '0.9375rem' }, // 12px, 13px, 15px
               whiteSpace: 'nowrap'
             }}
           >
             {holder}
           </Typography>
         </Stack>
-        <Stack spacing={0.5}>
+        <Stack spacing={0.25}>
           <Typography
             variant="overline"
             sx={{
               opacity: 0.7,
               lineHeight: 1,
-              fontSize: 'clamp(8px, 0.7vw, 10px)'
+              fontSize: { xs: '0.5rem', md: '0.5625rem', lg: '0.625rem' } // 8px, 9px, 10px
             }}
           >
             VALID THRU
@@ -132,7 +144,7 @@ export const CreditCard = ({
             variant="body1"
             sx={{
               fontWeight: 600,
-              fontSize: 'clamp(12px, 1.1vw, 15px)'
+              fontSize: { xs: '0.75rem', md: '0.8125rem', lg: '0.9375rem' } // 12px, 13px, 15px
             }}
           >
             {expiry}
@@ -147,17 +159,18 @@ export const CreditCard = ({
             ? 'linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%)'
             : 'none',
           borderTop: variant === 'inactive' ? `1px solid ${theme.palette.divider}` : 'none',
-          px: theme.spacing(3),
-          py: 'clamp(12px, 1.5vw, 20px)',
+          px: 'clamp(1.25rem, 2vw, 1.625rem)', // Fluid side padding
+          py: 'clamp(1rem, 1.5vw, 1.5rem)', // 16px -> 24px
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center'
         })}
       >
         <Typography
+          variant="h3"
           sx={{
             fontWeight: 600,
-            fontSize: 'clamp(16px, 1.5vw, 22px)',
+            fontSize: { xs: '1rem', md: '1.125rem', lg: '1.375rem' }, // 16px, 18px, 22px
             letterSpacing: '1px',
             whiteSpace: 'nowrap'
           }}

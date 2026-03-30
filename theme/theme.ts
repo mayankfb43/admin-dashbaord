@@ -33,6 +33,42 @@ declare module '@mui/material/styles' {
 }
 
 // -----------------------------------
+// 🎯 TOKENS (Synced with Default.tokens.json)
+// -----------------------------------
+export const TOKENS = {
+  typography: {
+    fontFamily: {
+      sans: "var(--font-lato), 'Lato', 'Inter', 'Roboto', sans-serif",
+      serif: "'Noto Serif', serif",
+      mono: "var(--font-geist-mono), 'Roboto Mono', monospace",
+    },
+    weight: {
+      thin: 100,
+      extraLight: 200,
+      light: 300,
+      regular: 400,
+      medium: 500,
+      semibold: 600,
+      bold: 700,
+      extraBold: 800,
+      black: 900,
+    },
+    scale: {
+      "01": "0.75rem",  // 12px
+      "02": "0.875rem", // 14px
+      "03": "1rem",     // 16px
+      "04": "1.25rem",  // 20px
+      "05": "1.5rem",   // 24px
+      "06": "2rem",     // 32px
+      "07": "2.5rem",   // 40px
+      "08": "3rem",     // 48px
+      "09": "4rem",     // 64px
+      "10": "4.5rem",   // 72px
+    }
+  }
+} as const;
+
+// -----------------------------------
 // 🎯 THEME
 // -----------------------------------
 const theme = createTheme({
@@ -110,49 +146,53 @@ const theme = createTheme({
   // 🔤 TYPOGRAPHY
   // -----------------------------
   typography: {
-    fontFamily: `'Inter', 'Roboto', sans-serif`,
+    fontFamily: TOKENS.typography.fontFamily.sans,
     h1: {
-      fontSize: '2rem', // 32px
-      fontWeight: 700,
+      fontSize: TOKENS.typography.scale["06"], // 32px
+      fontWeight: TOKENS.typography.weight.bold,
     },
     h2: {
-      fontSize: '1.5rem', // 24px
-      fontWeight: 600
+      fontSize: TOKENS.typography.scale["05"], // 24px
+      fontWeight: TOKENS.typography.weight.semibold
     },
     h3: {
-      fontSize: '1.25rem', // 20px
-      fontWeight: 600
+      fontSize: TOKENS.typography.scale["04"], // 20px
+      fontWeight: TOKENS.typography.weight.semibold
     },
     h4: {
-      fontSize: '1.125rem', // 18px
-      fontWeight: 600
+      fontSize: TOKENS.typography.scale["03"], // 16px
+      fontWeight: TOKENS.typography.weight.semibold
     },
     h5: {
-      fontSize: '1rem',
-      fontWeight: 600,
+      fontSize: TOKENS.typography.scale["03"], // 16px
+      fontWeight: TOKENS.typography.weight.semibold,
     },
     h6: {
-      fontSize: '1.125rem',
-      fontWeight: 600,
+      fontSize: TOKENS.typography.scale["02"], // 14px
+      fontWeight: TOKENS.typography.weight.semibold,
     },
     body1: {
-      fontSize: '1rem', // 16px
+      fontSize: TOKENS.typography.scale["03"], // 16px
+      fontWeight: TOKENS.typography.weight.regular,
     },
     body2: {
-      fontSize: '0.875rem', // 14px
-      color: '#6B7280'
+      fontSize: TOKENS.typography.scale["02"], // 14px
+      fontWeight: TOKENS.typography.weight.regular,
     },
     caption: {
-      fontSize: '0.75rem', // 12px
-      fontWeight: 400
+      fontSize: TOKENS.typography.scale["01"], // 12px
+      fontWeight: TOKENS.typography.weight.regular,
     },
     overline: {
-      fontSize: '0.625rem', // 10px
-      fontWeight: 600,
+      fontSize: TOKENS.typography.scale["01"], // 12px
+      fontWeight: TOKENS.typography.weight.semibold,
       textTransform: 'uppercase',
       letterSpacing: '0.5px'
     },
-    button: { textTransform: 'none', fontWeight: 600 },
+    button: {
+      textTransform: 'none',
+      fontWeight: TOKENS.typography.weight.semibold
+    },
   },
 
   // -----------------------------
